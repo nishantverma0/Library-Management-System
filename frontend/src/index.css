@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Chivo:wght@100;200;300;400;500;600;700;800;900&family=IBM+Plex+Sans:wght@100;200;300;400;500;600;700&family=IBM+Plex+Mono:wght@100;200;300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-[#E0E0D9];
+  }
+  body {
+    @apply font-['IBM_Plex_Sans'] text-[#111111] bg-[#F9F9F8];
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-['Chivo'];
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-[#FF4B00] text-white font-bold px-6 py-3 rounded-none hover:bg-[#D63F00] transition-colors focus:ring-2 focus:ring-[#FF4B00] focus:ring-offset-2;
+  }
+  .btn-secondary {
+    @apply bg-[#111111] text-white font-bold px-6 py-3 rounded-none hover:bg-[#333333] transition-colors;
+  }
+  .btn-outline {
+    @apply border-2 border-[#111111] text-[#111111] font-bold px-6 py-3 rounded-none hover:bg-[#F3F3F0] transition-colors;
+  }
+  .input-field {
+    @apply h-12 border border-[#E0E0D9] bg-white px-4 text-base rounded-none focus:border-[#FF4B00] focus:ring-1 focus:ring-[#FF4B00] transition-all outline-none;
+  }
+  .input-error {
+    @apply border-[#D92D20] focus:border-[#D92D20] focus:ring-[#D92D20];
+  }
+  .label-text {
+    @apply text-xs font-bold uppercase tracking-[0.2em] text-[#595956] block mb-2;
+  }
+  .table-header {
+    @apply bg-[#F3F3F0] border-b-2 border-[#111111] text-xs font-bold uppercase tracking-[0.1em] text-[#595956] py-3 px-4;
+  }
+  .table-row {
+    @apply border-b border-[#E0E0D9] hover:bg-[#F9F9F8] transition-colors;
+  }
+  .table-cell {
+    @apply py-3 px-4 text-sm font-medium;
+  }
+  .error-text {
+    @apply text-[#D92D20] text-sm font-medium mt-1;
+  }
+}

@@ -1,0 +1,136 @@
+{
+  "theme": {
+    "name": "Swiss Brutalist Library",
+    "archetype": "Archetype 4 (Swiss & High-Contrast)",
+    "mode": "light",
+    "description": "An objective, rigid, and functional design system tailored for a data-dense Library Management System. Prioritizes extreme clarity, structural grid layouts, and high-visibility signal colors over decorative elements. Shadows are removed in favor of strict 1px borders."
+  },
+  "colors": {
+    "background": {
+      "page": "#F9F9F8",
+      "surface": "#FFFFFF",
+      "surface_alt": "#F3F3F0",
+      "overlay": "rgba(17, 17, 17, 0.4)"
+    },
+    "text": {
+      "primary": "#111111",
+      "secondary": "#595956",
+      "tertiary": "#8A8A86",
+      "on_dark": "#FFFFFF",
+      "on_accent": "#FFFFFF"
+    },
+    "borders": {
+      "default": "#E0E0D9",
+      "strong": "#111111",
+      "focus": "#FF4B00"
+    },
+    "accents": {
+      "primary": "#FF4B00",
+      "primary_hover": "#D63F00",
+      "secondary": "#003BFF",
+      "secondary_hover": "#002ED6",
+      "success": "#14854D",
+      "error": "#D92D20",
+      "warning": "#FFB800"
+    }
+  },
+  "typography": {
+    "fonts": {
+      "heading": "'Chivo', sans-serif",
+      "body": "'IBM Plex Sans', sans-serif",
+      "mono": "'IBM Plex Mono', monospace"
+    },
+    "scales": {
+      "h1": "text-4xl sm:text-5xl font-black tracking-tighter leading-none",
+      "h2": "text-2xl sm:text-3xl font-extrabold tracking-tight leading-tight",
+      "h3": "text-xl sm:text-2xl font-bold tracking-tight",
+      "h4": "text-lg font-bold tracking-tight",
+      "body": "text-base font-medium leading-relaxed",
+      "body_small": "text-sm font-medium leading-relaxed",
+      "label": "text-xs font-bold uppercase tracking-[0.2em] text-[#595956]"
+    },
+    "rules": [
+      "Headings NEVER use Inter. Chivo is mandatory.",
+      "Labels, overlines, and table headers MUST use the 'label' scale (uppercase, wide tracking).",
+      "Serial numbers, User IDs, Membership IDs, and Dates MUST use IBM Plex Mono."
+    ]
+  },
+  "layout_and_spacing": {
+    "grid_system": "Mode B: The Control Room Grid",
+    "spacing_scale": "Tailwind standard (p-2, p-4, p-6, p-8, p-12). Generous internal padding (p-8) for forms.",
+    "rules": [
+      "Use sharp edges. Global border-radius must be 'rounded-none' or at most 'rounded-sm' (2px).",
+      "Cardless design heavily preferred. Use 'border-collapse' style grids with 1px solid borders separating sections instead of floating cards.",
+      "Forms should be dense but legible. Form groups separated by generous spacing (gap-6 or gap-8).",
+      "No drop shadows for structural elements. Depth is achieved via contrast and borders."
+    ]
+  },
+  "components": {
+    "buttons": {
+      "primary": "bg-[#FF4B00] text-white font-bold px-6 py-3 rounded-none hover:bg-[#D63F00] transition-colors focus:ring-2 focus:ring-[#FF4B00] focus:ring-offset-2",
+      "secondary": "bg-[#111111] text-white font-bold px-6 py-3 rounded-none hover:bg-[#333333] transition-colors",
+      "outline": "border-2 border-[#111111] text-[#111111] font-bold px-6 py-3 rounded-none hover:bg-[#F3F3F0] transition-colors"
+    },
+    "inputs": {
+      "default": "h-12 border border-[#E0E0D9] bg-white px-4 text-base rounded-none focus:border-[#FF4B00] focus:ring-1 focus:ring-[#FF4B00] transition-all outline-none",
+      "error": "border-[#D92D20] focus:border-[#D92D20] focus:ring-[#D92D20]",
+      "disabled": "bg-[#F3F3F0] text-[#8A8A86] cursor-not-allowed border-[#E0E0D9]"
+    },
+    "checkboxes_and_radios": {
+      "style": "Sharp square boxes. When checked, fill with #FF4B00. Radio buttons are square inside a square (brutalist twist) or standard circle but with stark solid fills.",
+      "behavior": "Radio buttons must only allow one selection. Checkboxes act as Yes/No."
+    },
+    "tables": {
+      "header": "bg-[#F3F3F0] border-b-2 border-[#111111] text-xs font-bold uppercase tracking-[0.1em] text-[#595956] py-3 px-4",
+      "row": "border-b border-[#E0E0D9] hover:bg-[#F9F9F8] transition-colors",
+      "cell": "py-3 px-4 text-sm font-medium"
+    },
+    "shadcn_overrides": [
+      "Override all Card, Dialog, and Popover components to have 'rounded-none' and 'shadow-none', replacing shadows with 'border-2 border-[#111111]'.",
+      "Override Tabs to look like folder tabs with sharp edges and strong active borders."
+    ]
+  },
+  "interactions_and_motion": {
+    "hover": "Explicit text and background color changes. No subtle fades; instant or fast (150ms) snappy transitions.",
+    "focus": "High contrast focus rings (2px solid #FF4B00 with 2px offset).",
+    "accessibility": "Must respect prefers-reduced-motion. Validations MUST appear inline under the input immediately, NOT in alerts. Use color and text (e.g., 'Error: field required')."
+  },
+  "module_specific_rules": {
+    "login": "Split screen layout. Stark white left side with minimal form. Right side is full-bleed architectural image with max 20% dark overlay.",
+    "maintenance_admin": "Dense bento grid for forms. Use distinct tabs for Book Management vs User Management.",
+    "transactions": "Prominent top search bar (Book Availability) spanning the layout. Results shown in the stark table format described above. Issue/Return forms strictly structured in two columns on desktop.",
+    "fine_payment": "High-contrast breakout section or modal. The 'Fine Paid' checkbox is isolated and highlighted with a warning border if pending."
+  },
+  "media": {
+    "image_urls": [
+      {
+        "url": "https://images.unsplash.com/photo-1650099661671-a6db70726e99?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1OTN8MHwxfHNlYXJjaHwzfHxtb2Rlcm4lMjBsaWJyYXJ5JTIwYXJjaGl0ZWN0dXJlfGVufDB8fHx8MTc3NTAzNDI0NXww&ixlib=rb-4.1.0&q=85",
+        "category": "hero_login_bg",
+        "description": "A very tall building with a lot of books on it. Use as the full-bleed background for the right half of the split-screen Login page."
+      },
+      {
+        "url": "https://images.pexels.com/photos/12064/pexels-photo-12064.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        "category": "marketing_or_dashboard_header",
+        "description": "Panoramic view of a grand circular library. Use as a subtle header background banner with a heavy #F9F9F8 overlay for dashboard empty states if needed."
+      }
+    ],
+    "icons": {
+      "library": "phosphor-icons",
+      "instructions": "Use @phosphor-icons/react. Use 'regular' weight for UI elements, 'fill' for active states."
+    }
+  },
+  "testing": {
+    "requirements": "Every interactive element (buttons, inputs, radios, checkboxes, table rows) MUST have a data-testid attribute in kebab-case format reflecting its role (e.g., 'login-submit-button', 'book-search-input', 'fine-paid-checkbox')."
+  },
+  "instructions_to_main_agent": [
+    "Install and configure 'Chivo' (headings) and 'IBM Plex Sans/Mono' (body/data) via Google Fonts or next/font.",
+    "Install @phosphor-icons/react.",
+    "Implement Shadcn, but strip out all border-radius (rounded-md -> rounded-none) and drop-shadows. Use strict borders instead.",
+    "Forms must contain inline validation text in the UI (red #D92D20), absolutely no JS window.alert().",
+    "Ensure password fields are masked (<input type='password'>).",
+    "Implement role-based routing (Admin vs User). Users attempting to access /maintenance should be redirected.",
+    "For the Issue Book flow, enforce date calculation (Return Date = Issue Date + 15 days) directly in the component state.",
+    "Ensure the Fine Payment logic strictly requires the checkbox to be checked if fine > 0 before allowing form submission."
+  ]
+}
+
